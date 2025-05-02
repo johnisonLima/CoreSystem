@@ -1,0 +1,49 @@
+get http://[::1]:8080/usuarios/ HTTP/1.1
+
+###
+get http://[::1]:8080/telefones/ HTTP/1.1
+
+###
+
+POST http://[::1]:8080/usuarios
+Content-Type: application/json
+
+{
+  "email": "jane.smith@example.com",
+  "nome": "Jane",
+  "sobrenome": "Smith",
+  "estado": "RJ",
+  "cidade": "Rio de Janeiro",
+  "bairro": "Copacabana",
+  "logradouro": "Avenida Atlântica",
+  "complemento": "Cobertura 1",
+  "numero_residencial": "456",
+  "cep": "22070-000",
+  "data_criacao": "2023-02-20T12:30:00Z",
+  "senha": "senha456",
+  "status": "ativo",
+  "telefones": [
+    {
+      "id_telefone": 3,
+      "email_usuario": "jane.smith@example.com",
+      "numero_telefone": "(21) 98765-4321",
+      "tipo_telefone": "celular"
+    }
+  ]
+}
+
+###  relacionamentos
+get http://[::1]:8080/usuarios?_embed=telefones
+
+###  relacionamentos
+get http://[::1]:8080/telefones?_expand=usuario
+
+
+
+###
+DELETE http://[::1]:8080/usuarios/4
+###
+### json-server --port 8080 --watch src/assets/bd-local/db.json --id id_email
+### json-server --port 8080 --routes src/assets/bd-local/routes.json --watch src/assets/bd-local/db.json --id _id
+### json-server --port 8080 --routes routes.json --watch db.json --id _id
+json-server --port 8080 db.json --routes routes.json --id _id

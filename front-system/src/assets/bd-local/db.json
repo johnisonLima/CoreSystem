@@ -1,0 +1,84 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "email": "john.doe@example.com",
+      "nome": "John",
+      "sobrenome": "Doe",
+      "estado": "SP",
+      "cidade": "São Paulo",
+      "bairro": "Centro",
+      "logradouro": "Rua Exemplo",
+      "complemento": "Apto 101",
+      "numero_residencial": "123",
+      "cep": "01000-000",
+      "data_criacao": "2023-01-15T10:00:00Z",
+      "senha": "senha123",
+      "status": "ativo"
+    },
+    {
+      "id": 2,
+      "email": "alice.wonderland@example.com",
+      "nome": "Alice",
+      "sobrenome": "Wonderland",
+      "estado": "MG",
+      "cidade": "Belo Horizonte",
+      "bairro": "Savassi",
+      "logradouro": "Rua das Flores",
+      "complemento": null,
+      "numero_residencial": "789",
+      "cep": "30140-120",
+      "data_criacao": "2023-03-10T09:45:00Z",
+      "senha": "senha789",
+      "status": "ativo"
+    },
+    {
+      "id": 3,
+      "email": "jane.smith@example.com",
+      "nome": "Jane",
+      "sobrenome": "Smith",
+      "estado": "RJ",
+      "cidade": "Rio de Janeiro",
+      "bairro": "Copacabana",
+      "logradouro": "Avenida Atlântica",
+      "complemento": "Cobertura 1",
+      "numero_residencial": "456",
+      "cep": "22070-000",
+      "data_criacao": "2023-02-20T12:30:00Z",
+      "senha": "senha456",
+      "status": "ativo"
+    }
+  ],
+  "telefones": [
+    {
+      "id": 1,
+      "usuarioId": 1,
+      "numero": "(11) 98765-4321",
+      "tipo": "celular"
+    },
+    {
+      "id": 2,
+      "usuarioId": 1,
+      "numero": "(11) 12345-6789",
+      "tipo": "residencial"
+    },
+    {
+      "id": 4,
+      "usuarioId": 2,
+      "numero": "(31) 98765-4321",
+      "tipo": "celular"
+    },
+    {
+      "id": 5,
+      "usuarioId": 2,
+      "numero": "(31) 12345-6789",
+      "tipo": "comercial"
+    },
+    {
+      "id": 3,
+      "usuarioId": 3,
+      "numero": "(21) 98765-4321",
+      "tipo": "celular"
+    }
+  ]
+}

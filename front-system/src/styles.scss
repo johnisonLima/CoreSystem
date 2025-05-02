@@ -1,1 +1,107 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.d-flex{
+  display: flex;
+}
+
+.flex-column{
+  flex-direction: column;
+}
+
+.align-items-center{
+  align-items: center;
+}
+
+.align-items-baseline{
+  align-items: first baseline;
+}
+
+.form-row{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.col{ flex-grow: 1; }
+.col-2 { flex: 2; }
+.col-3 { flex: 3; }
+.col-4 { flex: 4; }
+.col-5 { flex: 5; }
+.col-6 { flex: 6; }
+.col-7 { flex: 7; }
+.col-8 { flex: 8; }
+.col-9 { flex: 9; }
+.col-10 { flex: 10; }
+.col-11 { flex: 11; }
+.col-12 { flex: 12; }
+
+// Dialog
+.mat-mdc-dialog-panel{
+  overflow: auto;
+}
+
+// Custom Theme
+$custom-primary-palette: (
+  50: #e3f2fd,
+  100: #bbdefb,
+  200: #90caf9,
+  300: #64b5f6,
+  400: #42a5f5,
+  500: #2196f3,
+  600: #1e88e5,
+  700: #1976d2,
+  800: #1565c0,
+  900: #0d47a1,
+  A100: #82b1ff,
+  A200: #448aff,
+  A400: #2979ff,
+  A700: #2962ff,
+  contrast: (
+    50: rgba(0, 0, 0, 0.87), // black
+    100: rgba(0, 0, 0, 0.87), // black
+    200: rgba(0, 0, 0, 0.87), // black
+    300: rgba(0, 0, 0, 0.87), // black
+    400: rgba(0, 0, 0, 0.87), // black
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: rgba(0, 0, 0, 0.87), // black
+    A200: white,
+    A400: white,
+    A700: white,
+  )
+);
+
+$custom-primary: mat.define-palette($custom-primary-palette);
+$custom-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$custom-warn: mat.define-palette(mat.$red-palette);
+
+$light-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $custom-primary,
+      accent: $custom-accent,
+      warn: $custom-warn,
+    ),
+    typography: (
+      brand-family: 'Comic Sans',
+      bold-weight: 900
+    )
+  )
+);
+
+// Inclua os estilos do tema no arquivo
+@include mat.all-component-themes($light-theme);

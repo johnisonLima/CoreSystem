@@ -1,0 +1,15 @@
+.card{
+  padding: 20px 10px;
+}
+
+.actions{
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  gap: 10px;
+}
+
+.envelope{
+  display: flex;
+  flex-direction: row;
+}
